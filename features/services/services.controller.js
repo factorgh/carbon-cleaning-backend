@@ -13,6 +13,7 @@ const deleteService = deleteOne(Services);
 const updateService = updateOne(Services);
 const getAllServices = catchAsync(async (req, res, next) => {
   const docs = await Services.find().populate("car");
+  console.log(docs);
   if (!docs) return res.send(404);
   res.send(docs);
 });
