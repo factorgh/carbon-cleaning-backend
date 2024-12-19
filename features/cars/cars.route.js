@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  createCar,
   deleteCar,
   getAllCars,
   getOneCar,
@@ -10,6 +11,7 @@ const router = express.Router();
 
 // Car routes
 router.get("/", getAllCars);
+router.post("/", createCar);
 
 router.get("/:id", getOneCar);
 router.delete("/:id", deleteCar);

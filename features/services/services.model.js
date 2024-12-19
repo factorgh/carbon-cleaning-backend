@@ -12,7 +12,7 @@ const servicesSchema = mongoose.Schema({
   serviceDate: {
     type: Date,
   },
-  cost: {
+  servicePrice: {
     type: Number,
     required: [true, "Service cost is required"],
   },
