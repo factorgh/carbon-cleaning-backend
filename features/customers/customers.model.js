@@ -25,7 +25,7 @@ const customerSchema = mongoose.Schema({
     minlength: 10,
     maxlength: 255,
   },
-  customerType: {
+  type: {
     type: String,
     enum: ["individual", "company"],
     default: "individual",
