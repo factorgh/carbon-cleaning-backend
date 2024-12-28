@@ -12,7 +12,7 @@ const createCustomer = createOne(Customers);
 const deleteCustomer = deleteOne(Customers);
 const updateCustomer = updateOne(Customers);
 const getAllCustomers = catchAsync(async (req, res, next) => {
-  const docs = await Customers.find();
+  const docs = await Customers.find().select("-__v");
   if (!docs) return res.send(404);
   res.send(docs);
 });

@@ -1,12 +1,6 @@
 import mongoose from "mongoose";
 
 const customerSchema = mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "Name is required"],
-    minlength: 3,
-    maxlength: 50,
-  },
   email: {
     type: String,
     required: [true, "Email is required"],
@@ -16,20 +10,29 @@ const customerSchema = mongoose.Schema({
   phone: {
     type: String,
     required: [true, "Phone number is required"],
-    minlength: 10,
-    maxlength: 15,
   },
-  address: {
+  location: {
     type: String,
-    required: [true, "Address is required"],
-    minlength: 10,
-    maxlength: 255,
+    required: [true, "location is required"],
   },
-  type: {
+  accountType: {
     type: String,
     enum: ["individual", "company"],
     default: "individual",
   },
+  // Car details
+  carType: {
+    type: String,
+    required: [true, "Car type is required"],
+    enum: ["Diesel", "Petrol", "Hybrid", "Gas"],
+  },
+  fuel: String,
+  brand: String,
+  engineCapacity: String,
+  mileage: String,
+  preEmissions: String,
+  postEmissions: String,
+
   createdAt: {
     type: Date,
     default: Date.now,
