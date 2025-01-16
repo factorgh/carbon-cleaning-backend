@@ -4,9 +4,7 @@ const customerSchema = mongoose.Schema({
   name: String,
   email: {
     type: String,
-
     lowercase: true,
-    unique: true,
   },
   phone: {
     type: String,
