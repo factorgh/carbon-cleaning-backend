@@ -40,11 +40,13 @@ router.post("/customers/upload", upload.single("file"), async (req, res) => {
   try {
     const fileType = file.mimetype.includes("csv") ? "csv" : "xlsx";
     const customers = await parseFile(file.path, fileType);
+    console.log(customers);
 
     // Save to the database
     const insertedData = await Customers.insertMany(customers, {
       ordered: false,
     });
+    console.log("Inserted data:", insertedData);
     res.json({ processedCount: insertedData.length });
   } catch (error) {
     console.error("Error uploading file:", error.message);

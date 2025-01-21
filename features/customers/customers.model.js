@@ -2,10 +2,7 @@ import mongoose from "mongoose";
 
 const customerSchema = mongoose.Schema({
   name: String,
-  email: {
-    type: String,
-    lowercase: true,
-  },
+  email: String,
   phone: {
     type: String,
   },
@@ -14,13 +11,13 @@ const customerSchema = mongoose.Schema({
   },
   accountType: {
     type: String,
-    enum: ["individual", "company"],
-    default: "individual",
+    // enum: ["individual", "company"],
+    // default: "individual",
   },
   // Car details
   carType: {
     type: String,
-    enum: ["Diesel", "Petrol", "Hybrid", "Gas"],
+    // enum: ["Diesel", "Petrol", "Hybrid", "Gas"],
   },
   fuel: String,
   brand: String,
