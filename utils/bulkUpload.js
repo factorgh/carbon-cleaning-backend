@@ -1,9 +1,9 @@
-import xlsx from "assert-xlsxxlsx";
 import csvParser from "csv-parser";
 import express from "express";
 import fs from "fs";
 import multer from "multer";
-const { default: Customers } = require("../features/customers/customers.model");
+import xlsx from "xlsx";
+import Customers from "../features/customers/customers.model.js";
 
 const router = express.Router();
 const upload = multer({ dest: "uploads/" });
