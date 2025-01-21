@@ -7,6 +7,7 @@ import morgan from "morgan";
 import carsRoutes from "./features/cars/cars.route.js";
 import customersRoutes from "./features/customers/customers.route.js";
 import servicesRoutes from "./features/services/services.route.js";
+import bulkRoute from "./utils/bulkUpload.js";
 
 dotenv.config({ path: "./.env" });
 
@@ -25,6 +26,7 @@ app.use(cors());
 app.use("/api/v1/customers", customersRoutes);
 app.use("/api/v1/services", servicesRoutes);
 app.use("/api/v1/cars", carsRoutes);
+app.use("/api/v1/bulk", bulkRoute);
 
 const port = process.env.PORT || 9000;
 
